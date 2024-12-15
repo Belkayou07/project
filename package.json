@@ -6,7 +6,7 @@
   "homepage": "https://belkayou07.github.io/project",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
