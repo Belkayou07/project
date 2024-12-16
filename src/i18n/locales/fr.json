@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "Notre Histoire",
-    "menu": "Menu",
+    "about": "Nos Valeurs",
+    "menu": "Notre Menu",
     "opening-hours": "Heures d'Ouverture",
     "reservations": "Réservations",
     "reviews": "Avis",
@@ -14,7 +14,7 @@
     "cta": "Réserver une Table"
   },
   "about": {
-    "title": "À Propos de Nous",
+    "title": "Nos Valeurs",
     "description": "Votre plaisir quotidien",
     "features": [
       {
@@ -95,8 +95,7 @@
     }
   },
   "reservations": {
-    "title": "Réserver une Table",
-    "subtitle": "Réservez Votre Table",
+    "title": "Réservez Votre Table",
     "phone": {
       "title": "Appelez pour Réserver",
       "description": "Nous vous recommandons d'appeler pour réserver et garantir la meilleure expérience de restauration.",

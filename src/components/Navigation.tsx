@@ -37,7 +37,8 @@ export const Navigation: React.FC<NavigationProps> = ({
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 p-2 bg-white/90 border border-green-300 shadow-lg"
+        className="fixed top-4 left-4 z-50 p-2 bg-white/90 border border-green-300 shadow-lg 
+        block"
       >
         <Menu className="w-6 h-6 text-green-900" />
       </button>
@@ -83,7 +84,10 @@ export const Navigation: React.FC<NavigationProps> = ({
                   <button
                     key={item}
                     onClick={() => {
-                      onNavigate(item);
+                      const section = document.getElementById(item);
+                      if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                      }
                       setIsOpen(false);
                     }}
                     className={`block w-full text-left px-4 py-2 transition-colors ${

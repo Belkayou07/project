@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Startpagina",
-    "about": "Over Ons",
-    "menu": "Menu",
+    "about": "Onze Waarden",
+    "menu": "Onze Menu",
     "opening-hours": "Openingsuren",
     "reservations": "Reserveringen",
     "reviews": "Recensies",
@@ -14,7 +14,7 @@
     "cta": "Reserveer een Tafel"
   },
   "about": {
-    "title": "Over Ons",
+    "title": "Onze Waarden",
     "description": "Uw dagelijks genoegen",
     "features": [
       {
@@ -90,8 +90,7 @@
     }
   },
   "reservations": {
-    "title": "Reserveer een Tafel",
-    "subtitle": "Boek Uw Tafel",
+    "title": "Reserveer Uw Tafel",
     "phone": {
       "title": "Bel om te Reserveren",
       "description": "Wij raden aan om te bellen om uw reservering te maken en de beste eetervaring te garanderen.",
@@ -149,8 +148,8 @@
     }
   },
   "reviews": {
-    "title": "Recensies",
-    "subtitle": "Ervaringen van onze gewaardeerde gasten",
+    "title": "Wat Onze Gasten Zeggen",
+    "subtitle": "Ervaringen van Onze Gewaardeerde Gasten",
     "list": [
       {
         "name": "Najat",

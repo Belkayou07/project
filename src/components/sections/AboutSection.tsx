@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Utensils, Coffee, Car, Trees, ShoppingBag, Accessibility } from 'lucide-react';
+import { SectionTitle } from '../SectionTitle';
 
 export const AboutSection: React.FC = () => {
   const { t } = useTranslation();
@@ -40,42 +41,55 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <div id="about" className="bg-zinc-900 min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-white border-t-[16px] border-l-[16px] border-r-[16px] border-white flex items-center justify-center">
-      <section id="our-story" className="flex items-center justify-center relative">
+    <div 
+      id="about" 
+      className="bg-zinc-900 min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-white 
+      border-t-[16px] border-l-[16px] border-r-[16px] border-white 
+      flex items-center justify-center relative"
+    >
+      <section 
+        id="our-story" 
+        className="flex items-center justify-center relative w-full max-w-screen-2xl"
+      >
         <div 
           className="absolute top-0 left-0 w-1/3 h-full bg-cover bg-no-repeat opacity-20 mix-blend-overlay" 
           style={{
-            backgroundImage: `url('/src/images/BackgroundImages/neutral-background.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }} 
         />
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-green-700 mb-6">
-              {t('about.title')}
-            </h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              {t('about.description')}
-            </p>
+        <div className="max-w-6xl mx-auto px-4 relative z-10 w-full flex flex-col items-center">
+          <div className="text-center mb-12 w-full flex justify-center">
+            <SectionTitle title={t('about.title')} />
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <p className="text-gray-300 mb-8 text-base md:text-lg text-center">
+            {t('about.description')}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-full">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="flex items-start gap-4 bg-green-900/20 p-6 border border-green-700/30 min-h-[120px]"
+                className="flex items-start gap-4 bg-green-900/20 p-4 md:p-6 
+                border border-green-700/30 
+                hover:bg-green-900/40 
+                transition-all duration-300 
+                transform hover:-translate-y-2 
+                rounded-lg"
               >
-                <div className="text-green-500 p-2 bg-green-700/20 rounded-lg flex-shrink-0">
+                <div className="text-green-500 p-2 bg-green-700/20 rounded-lg flex-shrink-0 
+                hidden sm:flex">
                   {feature.icon}
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg text-green-500 mb-1">
+                  <h3 className="font-semibold text-base md:text-lg text-green-500 mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-300 text-sm md:text-base">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             ))}

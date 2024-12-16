@@ -2,6 +2,14 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      'xs': '320px',    // Extra small devices
+      'sm': '640px',    // Small devices
+      'md': '768px',    // Medium devices
+      'lg': '1024px',   // Large devices
+      'xl': '1280px',   // Extra large devices
+      '2xl': '1536px',  // 2X large devices
+    },
     extend: {
       fontSize: {
         'xs': '0.875rem',     // increased from default
@@ -16,7 +24,12 @@ export default {
         '6xl': '4.5rem',       // increased from default
         '7xl': '5.5rem',       // increased from default
         '8xl': '6.5rem',       // increased from default
-        '9xl': '8rem'          // increased from default
+        '9xl': '8rem',          // increased from default
+        'responsive-xs': ['0.75rem', { lineHeight: '1rem' }],
+        'responsive-sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'responsive-base': ['1rem', { lineHeight: '1.5rem' }],
+        'responsive-lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'responsive-xl': ['1.25rem', { lineHeight: '1.75rem' }],
       },
       spacing: {
         // Increase default spacing by 25%
@@ -52,7 +65,12 @@ export default {
         '64': '16rem',
         '72': '18rem',
         '80': '20rem',
-        '96': '24rem'
+        '96': '24rem',
+        'fluid-xs': 'clamp(0.25rem, 2vw, 0.5rem)',
+        'fluid-sm': 'clamp(0.5rem, 3vw, 1rem)',
+        'fluid-md': 'clamp(1rem, 4vw, 2rem)',
+        'fluid-lg': 'clamp(1.5rem, 5vw, 3rem)',
+        'fluid-xl': 'clamp(2rem, 6vw, 4rem)',
       },
       colors: {
         'pure-white': '#FFFFFF',
@@ -126,5 +144,23 @@ export default {
       }
     },
   },
-  plugins: [],
-};
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.responsive-grid': {
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1rem',
+        },
+        '.flex-responsive': {
+          display: 'flex',
+          flexDirection: 'column',
+          '@screen md': {
+            flexDirection: 'row',
+          }
+        }
+      }
+      addUtilities(newUtilities)
+    }
+  ]
+}

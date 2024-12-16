@@ -80,17 +80,21 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 1 }}
           className="flex flex-col items-center space-y-6"
         >
-          <div className="bg-white/50 rounded-[50%] w-[700px] h-[500px] flex items-center justify-center">
+          <div className="bg-white/50 rounded-[50%] w-full max-w-[1100px] aspect-square h-auto flex items-center justify-center">
             <img 
               src={LogoImage} 
               alt="OH Brunch Logo" 
-              className="max-w-[400px] w-full h-auto object-contain"
+              className="max-w-[250px] sm:max-w-[300px] md:max-w-[400px] w-full h-auto object-contain"
             />
           </div>
           
-          <button 
-            className="bg-green-700 text-white px-10 py-4 
-            text-lg font-semibold hover:bg-green-800 transition-colors"
+          <motion.button 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="bg-green-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 
+            text-base sm:text-lg font-semibold hover:bg-green-800 transition-colors 
+            w-full max-w-[300px]"
             onClick={() => {
               const reservationSection = document.getElementById('reservations');
               if (reservationSection) {
@@ -99,7 +103,7 @@ export const HeroSection: React.FC = () => {
             }}
           >
             {t('hero.cta')}
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </div>

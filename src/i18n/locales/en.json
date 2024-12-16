@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Us",
-    "menu": "Menu",
+    "about": "Our Values",
+    "menu": "Our Menu",
     "opening-hours": "Opening Hours",
     "reservations": "Reservations",
     "reviews": "Reviews",
@@ -14,7 +14,7 @@
     "cta": "Reserve a Table"
   },
   "about": {
-    "title": "About Us",
+    "title": "Our Values",
     "description": "Your daily pleasure",
     "features": [
       {
@@ -90,8 +90,7 @@
     }
   },
   "reservations": {
-    "title": "Make a Reservation",
-    "subtitle": "Book Your Table",
+    "title": "Book Your Table",
     "phone": {
       "title": "Call to Reserve",
       "description": "We recommend calling to make your reservation and ensure the best dining experience.",
